@@ -18,37 +18,38 @@
       --card:#040511;
       --glass: rgba(255,255,255,0.02);
     }
-    /* --- Light Mode --- */
+    /*Themes !!*/
+    /*Light Mode (ew)*/
     body[data-theme="light"] {
         --bg: #f1f5f9; --panel: #ffffff; --card: #ffffff; --text: #0f172a; --muted: #64748b;
         --accent: #0ea5e9; --accent-2: #8b5cf6; --ghost-bg: rgba(0,0,0,0.03);
         --btn-bg: linear-gradient(180deg,var(--accent),#0d9488);
     }
-    /* --- Christmas Theme --- */
+    /* Christmas Theme */
     body[data-theme="christmas"] {
         --bg: #0c2a23; --panel: #103c31; --card: #0c342a; --text: #f1f5f9; --muted: #94a3b8;
         --accent: #ef4444; --accent-2: #f59e0b; --danger: #fbbf24;
         --btn-bg: linear-gradient(180deg, var(--accent), #dc2626);
     }
-    /* --- Halloween Theme --- */
+    /* Halloween Theme */
     body[data-theme="halloween"] {
         --bg: #110c1c; --panel: #1e1b2b; --card: #191624; --text: #f1f5f9; --muted: #a1a1aa;
         --accent: #f97316; --accent-2: #a855f7;
         --btn-bg: linear-gradient(180deg, #f97316, #ea580c);
     }
-    /* --- Strawberry Theme --- */
+    /* Strawberry Theme */
     body[data-theme="strawberry"] {
         --bg: #2e0915; --panel: #421322; --card: #3b111e; --text: #fce7f3; --muted: #f472b6;
         --accent: #ec4899; --accent-2: #d946ef;
         --btn-bg: linear-gradient(180deg, #ec4899, #db2777);
     }
-    /* --- Summer Theme --- */
+    /* Summer Theme */
     body[data-theme="summer"] {
         --bg: #03040a; --panel: #0b0d12; --card: #040511; --text: #e6eef6;
         --accent: #f59e0b; --accent-2: #14b8a6;
         --btn-bg: linear-gradient(180deg, #f59e0b, #d97706);
     }
-    /* --- Blue Theme --- */
+    /* Blue Theme */
     body[data-theme="blue"] {
         --bg: #070912; --panel: #0f172a; --card: #0b1120; --text: #e2e8f0; --muted: #94a3b8;
         --accent: #38bdf8; --accent-2: #6366f1;
@@ -167,7 +168,7 @@
 
     <!-- DASHBOARD -->
     <section id="sec-dashboard" class="section active">
-        <!-- Reminders moved to top -->
+        <!-- Reminders -->
         <div class="panel" style="margin-bottom:18px">
             <div class="between" style="margin-bottom:12px">
               <h3>Reminders</h3>
@@ -228,7 +229,7 @@
     <section id="sec-dailytasks" class="section">
         <div class="panel">
             <div class="between">
-                <h3>Daily Tasks</h3>
+                <h3>Daily</h3>
                 <button id="addDailyTaskBtn" class="ghost">＋ Add Task</button>
             </div>
             <p class="muted small" style="margin-top:4px; margin-bottom: 12px;">Tasks reset every day.</p>
@@ -333,7 +334,7 @@
     </section>
   </main>
 
-  <!-- Settings modal -->
+  <!-- Settings -->
   <div id="settingsModal" style="display:none">
     <div class="modal-back" id="settingsBack">
       <div class="modal">
@@ -373,7 +374,7 @@
     </div>
   </div>
 
-  <!-- Streak modal -->
+  <!-- Streak -->
   <div id="streakModal" style="display:none">
     <div class="modal-back" id="modalBack">
       <div class="modal" role="dialog" aria-modal="true">
@@ -406,7 +407,7 @@
 
   let calMonth = new Date();
 
-  // ---------- Up Next / Priority helpers ----------
+  // ---------- Up Next ----------
   const IMPORTANCE_MULT = { auto:1, low:0.7, medium:1, high:1.6, critical:2.5 };
   const IMPORTANCE_COL = { auto:'var(--muted)', low:'#94a3b8', medium:'var(--accent)', high:'#fbbf24', critical:'#fb7185' };
 
@@ -534,7 +535,7 @@
     });
   }
 
-  // ---------- Storage Layer ----------
+  // ---------- Storage ----------
   const store = {
     get subjects(){ return JSON.parse(localStorage.getItem('st_subjects')||'[]') },
     set subjects(v){ localStorage.setItem('st_subjects', JSON.stringify(v)); refreshAll(); },
